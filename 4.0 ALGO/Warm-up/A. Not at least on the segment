@@ -1,0 +1,12 @@
+n, m = map(int, input().split())
+a=input().split()
+num_list=[int(i) for i in a]
+m1=m
+while m1!=0:
+    l, r = map(int, input().split())
+    new_array=num_list[l:r+1]
+    if max(new_array) > min(new_array):
+        print(max(new_array))
+    else:
+        print('NOT FOUND')
+    m1-=1
