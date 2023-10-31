@@ -1,0 +1,19 @@
+import math
+xa, ya, xb, yb = map(int,input().split())
+def try1(x1,y1,x2,y2):
+    k1=x2-x1
+    k2=y2-y1
+    return math.sqrt((k1**2)+(k2**2))
+def try2(x1,y1,x2,y2):
+    r1=math.sqrt(x1**2 + y1**2)
+    r2=math.sqrt(x2**2 + y2**2)
+    k1=abs(x2-x1)
+    k2=abs(y2-y1)
+    gip=math.sqrt((k1**2)+(k2**2))
+    alpha = math.ceil(math.degrees(math.acos((r1**2 + r2**2 - gip**2)/(2*r1*r2))))
+    return alpha * r1
+#расписываем условие, когда угловой коэф одинаковый
+if ya/xa == yb/xb:
+    print(try1(xa, ya, xb, yb))
+elif math.sqrt(xa**2 + ya**2) == math.sqrt(xb**2 + yb**2):
+    print(try2(xa, ya, xb, yb))
