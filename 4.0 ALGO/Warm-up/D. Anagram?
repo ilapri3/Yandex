@@ -1,0 +1,14 @@
+#Incomplete solution
+list_1=input()
+list_2=input()
+
+count=0
+
+for i in range(len(list_1)):
+    if list_1.count(list_1[i]) == list_2.count(list_1[i]) and list_1[i] in list_2:
+        count+=1
+
+if count == len(list_1):
+    print('YES')
+else:
+    print('NO')
